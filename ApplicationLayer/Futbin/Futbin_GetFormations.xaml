@@ -1,0 +1,236 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Futbin_GetFormations" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_DialogFormation" Type="OutArgument(x:String)" />
+    <x:Property Name="in_url" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>734,2187.3333333333335</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Futbin_GetFormations_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Futbin_GetFormations" sap:VirtualizedContainerService.HintSize="744,2122.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dtFormations" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message - Get Formations" sap:VirtualizedContainerService.HintSize="682,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Getting Formation Data...&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Open Browser - Get Formations" sap:VirtualizedContainerService.HintSize="682,694.6666666666666" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="4bb0b497-4f30-4d4a-8524-63542086a492" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do- Get Formations" sap:VirtualizedContainerService.HintSize="450,475.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '4-3-3' - Get Formations" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4bb0b497-4f30-4d4a-8524-63542086a492" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.futbin.com/squad-builder" CvElementArea="1366, 316, 152, 32" CvTextArea="1412, 325, 41, 12" CvTextArgument="4-3-3" CvType="InputBox" DesignTimeRectangle="1368, 318, 150, 29" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'4-3-3'" FullSelectorArgument="&lt;webctrl parentid='select-formation-btn' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='select-formation-btn' tag='BUTTON' type='' class='btn btn-forma formdescr waves-effect waves-light' aaname='                                                                                                                4-3-3                                                                                                                                                      ' check:innerText='4-3-3' /&gt;" Guid="2532112b-3b80-412c-807f-69f5eda1ee88" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJoAAAAhCAYAAAAh8rKhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAOZSURBVHhe7ZsxSFtRFIbFkBAMUqmExIhEEDGIUsngIKFDBqEiDhkCgljIIOggwUIGoVIqZAgokiGDhRSlZDAgLRQ6BARLB6FDoFMHp4DgECgIDpbA33OjiTcvtzXG5PF8PcM35N1zksd9X86598LrcLlcYFpDX19fFdW4TCXmPjmPGRathTQjTTM5j5Ea0Zxf38Py+yM6cMgwTSMcEi7JblVFEwOqJIZpFlm2qmhcyZhWI5yqE00VyDAPhUVjdIFFY3SBRWN0gUVjdIFF09B5kYHlVwadJfX4P7m6zrVcKcb+c8wp2mUS/SE//P4wes8V4yrO4vDOT1KOyCMCM/Dm0upYLaU0ejZnMFHJ9U/CtxmHrRlZTYoJRTuAY2f65oE3KloazpcUH1rCk4KoSiROPEj5i+i5UMXXYsvOUew0Bo7T5YpmO1rCGP3+YC6jjDcClu9rGH4VQ9elerwM/WHdyyG48wfq8XtgOtFsn8KYCJBghyuNi1akarYwQ6JIYuRFvh/9eSlOyX65mvkSCViq16iiCtF3klKckUjCE7iuvhORNbVs1a5AzMdg147fE3OJdraBIWpbA9/oH1gW5R6tU4P9A1WpQKShilbHaQwjdB/eI+NWtPJc/U02WbIQzcGZNNYk5hHtZnJGqYp0is+yaD9i8FHF0uLN7Wu+JwkXXR8N+jEWXcXTU9EybiqWJte3EIOjJvcQjj26HpqCfzYMz5fd6/swMrJs0XXYhWxtkExgEtEO0L0VpMnauF2Ay6IV4vCkVutw5rUVJwP78QZcW4vwBaYwvJciWTJwZOtzPSla7Nfk0rrnNIHevRUM0qbi2fId6x+jUCNbBN42SCYwhWiWo0h5x+dbl0R4LRboQQwlVEI1ALU/H7W/u9doCkq7VBnpwRl2jaZBkq0dkglMIZo1F6lvbS/EUcUkxudVLVLDzzXaJdLa7kTaXV3EMUiTPvT5jlyk4J4lqRLbUqvMoGedHlj0Law1sQamIlsbJBOYQjQVVtp9NrwZKJEsomXQJDtPdmEtJOF8I45I5uAsKOI1dKVF7DS82W3Yz9PUaiMYJUlHsg2ewxmFYgpdRcX1FsCiVShuwx19fnvoGpzDQMMHtvvofhfGeLX9TGEkzge2MqYVjTEWLBqjCywaowssGqMLLBqjCywaowssGqMLdaLxe51Mq1G+18lvqjOtRvmmekU2rmzMQxEOyZIJakRjmHbBojE64MIfBTNu51sH+8oAAAAASUVORK5CYII=" InformativeScreenshot="24676446830c52250ed9dd2831c40c97.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FIFA 23 Squad Builder | FUTBIN' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="1238, 273, 75, 14" CvTextArgument="SQUAD INFO" CvType="Text" DesignTimeRectangle="1240, 271, 297, 23" ElementType="Text" FriendlyName="'Squad info'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' isleaf='1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' isleaf='1' tag='DIV' class='top-bar-small-title pb-1' aaname='                                 Squad info                             ' check:innerText='SQUAD INFO' /&gt;" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dtFormations]" DisplayName="Extract Table Data - Get Formations" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Formations' ReferenceName='Column0'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="388,160" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="4bb0b497-4f30-4d4a-8524-63542086a492" Version="V3">
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="1232, 457, 311, 573" DesignTimeScaleFactor="1" FriendlyName="'3 ATB'" FullSelectorArgument="&lt;webctrl id='formations-list-content' tag='DIV' /&gt;" Guid="fa9822f8-af58-4172-a9d8-0662f7f05628" InformativeScreenshot="a76a09ba00862b46377289573c486917.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FIFA 23 Squad Builder | FUTBIN' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NExtractData.Target>
+            </uix:NExtractData>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1928, -878, 1936, 1048" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACUlBMVEVUxq1Txa1TxaxTxKxSxKtSw6tRwqpRwqlQwalRw6pRwalQwahTxq1TxqxSxaxRxKtQwqpQwqlQwKhxzru15ty45923592359y35ty25tu35dt5z71OwKdPwKel39T///+W2ctMv6ZPv6dVxq7C6eKV2cpMvqVPv6Zlyrbj9PL4/Pzz+vnz+/ny+/ny+vmQ18hOvqaK1sj6/f2q4ddyzrx1z710z710zr10zrxzzrxzzrtyzrpxzblxzLlxzLhwy7hcxK1OvqWx5Nrz+vp30L9QxatRxKxQw6pPwqlPwahOwKhNv6ZNvqZOvaVZx7DM7efT7utcyLFPwKhNvaVwzrvu+Pep4NZNvKSa28/+/v/8/f6L1shRxaxSw6q6597n9PVqy7hjybRWxa5NvaRMvKRfybPZ8e7A5+JUxa5Vxa255d645d1mybVMu6N+0sL2+/uk3tRcx7Fxzbvn9fTZ8O2G08So4Nbq9/be8+/l9fP9/v6v4dhhxbFWxq7E6uPW7+t5zbxNvqVoy7fm9fPy+fm449xwybeO18r7/f7K6+av49nC6OK249t4zbxQv6dMvaWy5Nvv+PhxzLtMwaiS18q349t5zb1RwKhax7DP7unM6uhYxK6n3tS65Nx4zLtQvqdMvKNzz73w+fik3tNfxbBTwamd3NH6/fyK1sW859/k9fFry7ZgybPc8e+65t1Vw6uB08P3/Pz8/v6S2MlOwaj1+/p5zr1Xxq7G6+Td8e9exbBmyrbY8e3v+vfu+ffw+viq39ZYx69rzbhrzLdqy7ZbxK6OiJt2AAACKklEQVQ4T3WTZ38SQRCHN5FQAiwBS6KCZ04FS4KnsceGDZCchVMRuwa72HuLJYklJvbee++9oSbxe7k7N8vxE/2/u32evRlmOPK/FBR2MBWZLVZ8zAtwm7nYjs8sDmdOKDW5bCVuq92DlBDasVPnLkZKS8vKunbr7vUhZkIPKT89y2XEhPTqjYe56eMPICbOvv3gqP8APRWVlcFgxUC/gpzQQYNBqBoydNjwESNHVVePHjN23HglhJzQCcAnTppMp7hc4ZJIdKo3VlOjqMjJtOkgzJjp0CdgsdrjsqKoGnI6azYIc2h2Qh45wHhCCHOTnM+bv4AWmooWmi2My0pISwjBsQhesHgJXbrMxlfg8bECWm0ihXz5ChBWrlq9Zu26CHJWIJXWBbp+AwgbN23eIm3dVhzHBhJpIWwHLu3YuWu3JAX37I3JyFHYt18XROoOHOQNpoTgPHQYiZ76hkZNZQ0yrgv0yFF+njx2vIkNvP5Ec8tJLCCEU3Dx9Jmz55LB8xcu+kUDQrh0GYQrV93Xrt+46Q/AhG4ZAr19B4S7EfO9+7EAnwA2IIQHwB8+iliiHn1FogCWeAzCk6duXJGqZjkXHM+eg/DiJfsTw4r+Euir15y/efsOVhDSalUVKQsXquAF7z94xYqM+yB8/ATC5y++eHZFRticv377nslkfvxk9/M5Ewp+tba2tbW3/45DA/qKjPDP1BUOu6NRznMnhBGfMf+F/yiQTv8BnQrafMrGp0AAAAAASUVORK5CYII=" InformativeScreenshot="a7e2ab2b9f9be5ea59091bba9ede1a15.jpg" Selector="&lt;html app='msedge.exe' title='FIFA 23 Squad Builder | FUTBIN' /&gt;" Title="FIFA 23 Squad Builder | FUTBIN" Url="[in_url]" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <Assign DisplayName="Assign - Get Formations" sap:VirtualizedContainerService.HintSize="682,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_DialogFormation]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtFormations]" DisplayName="For Each Row in Data Table - Get Formations" sap:VirtualizedContainerService.HintSize="682,967.3333333333334" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body - Get Formations" sap:VirtualizedContainerService.HintSize="648,847.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[Not CurrentRow(&quot;Formations&quot;).ToString.Contains(&quot;A&quot;c) And Not CurrentRow(&quot;Formations&quot;).ToString.Contains(&quot;N&quot;c)]" DisplayName="If Proper Formation Format - Get Formations" sap:VirtualizedContainerService.HintSize="586,736.6666666666666" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="552,584.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[out_DialogFormation.Equals(&quot;&quot;)]" DisplayName="If - Get Formations" sap:VirtualizedContainerService.HintSize="510,497.3333333333333" sap2010:WorkflowViewState.IdRef="If_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="476,172.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[out_DialogFormation]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[CurrentRow("Formations").ToString.Trim]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="476,172.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[out_DialogFormation]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[out_DialogFormation+";"+CurrentRow("Formations").ToString.Trim]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+  </Sequence>
+</Activity>

@@ -140,8 +140,18 @@
           </Assign>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get User Input - Main" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="ServiceLayer\UserInput\GetUserInput.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <OutArgument x:TypeArguments="x:String" x:Key="out_League">[LeagueInput]</OutArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="out_Formation">[FormationInput]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_League">
+                <VisualBasicReference x:TypeArguments="x:String" ExpressionText="LeagueInput" />
+              </OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_Formation">
+                <VisualBasicReference x:TypeArguments="x:String" ExpressionText="FormationInput" />
+              </OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_urlLeague">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;Futbin_Players&quot;).ToString" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_urlFormation">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;Futbin_SquadBuilder&quot;).ToString" />
+              </InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Extract Players - Main" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="BusinessLayer\ExtractPlayers.xaml">
