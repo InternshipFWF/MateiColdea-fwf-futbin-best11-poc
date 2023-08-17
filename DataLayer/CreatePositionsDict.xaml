@@ -25,6 +25,9 @@
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -99,7 +102,6 @@
           </ActivityAction.Argument>
           <Sequence DisplayName="Body - Create Positions DT" sap:VirtualizedContainerService.HintSize="548,1208.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="aux" />
               <Variable x:TypeArguments="s:String[]" Name="PlayerPositions" />
               <Variable x:TypeArguments="x:String" Name="replaceux" />
             </Sequence.Variables>

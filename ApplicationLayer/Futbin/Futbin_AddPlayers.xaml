@@ -34,6 +34,8 @@
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -102,7 +104,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="606,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Adding Players...&quot;]" />
+    <ui:LogMessage DisplayName="Log Message - Add Players" sap:VirtualizedContainerService.HintSize="606,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Adding Players...&quot;]" />
     <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser - Add Player" sap:VirtualizedContainerService.HintSize="606,1436.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="c0981929-2035-4a52-a595-16f038f5345e" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
@@ -126,7 +128,6 @@
                       <Variable x:TypeArguments="x:String" Name="CurrentParentId" />
                       <Variable x:TypeArguments="x:String" Name="CurrentPosition" />
                       <Variable x:TypeArguments="x:String" Name="Name" />
-                      <Variable x:TypeArguments="x:String" Name="Price" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -166,7 +167,7 @@
                         <OutArgument x:TypeArguments="x:String" x:Key="out_Name">[Name]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Select Player- Add Player" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="ApplicationLayer\Futbin_SelectPlayer.xaml">
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Select Player- Add Player" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="ApplicationLayer\Futbin\Futbin_SelectPlayer.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
                         <InArgument x:TypeArguments="x:String" x:Key="in_Name">[Name]</InArgument>

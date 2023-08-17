@@ -102,16 +102,6 @@
     <TryCatch DisplayName="Try Catch - Main" sap:VirtualizedContainerService.HintSize="534.6666666666666,1773.3333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <Sequence DisplayName="Robot Sequence - Main" sap:VirtualizedContainerService.HintSize="496,1534" sap2010:WorkflowViewState.IdRef="Sequence_2">
-          <Sequence.Variables>
-            <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="Config" />
-            <Variable x:TypeArguments="x:String" Name="LeagueInput" />
-            <Variable x:TypeArguments="x:String" Name="FormationInput" />
-            <Variable x:TypeArguments="sd:DataTable" Name="dt_Players" />
-            <Variable x:TypeArguments="scg:Dictionary(x:String, sd:DataTable)" Name="dict_PlayerPositions" />
-            <Variable x:TypeArguments="scg:List(x:String)" Name="PlayerHeaders" />
-            <Variable x:TypeArguments="scg:List(x:String)" Name="UsedPlayers" />
-            <Variable x:TypeArguments="x:String" Name="SquadLink" />
-          </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -189,9 +179,7 @@
           </ui:InvokeWorkflowFile>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Kill All Processes - Main" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="ServiceLayer\KillAllProcesses.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_processToKill">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;ProcessesToKill&quot;).ToString" />
-              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_processToKill">[Config("ProcessesToKill").ToString]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>

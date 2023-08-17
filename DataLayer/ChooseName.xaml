@@ -130,7 +130,7 @@
                       <InArgument x:TypeArguments="x:String">[currentRow("Name").ToString]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <If Condition="[in_usedPlayers.Contains(out_Name.ToString) = false]" DisplayName="If Player Hasn't Been Used - Choose Name" sap:VirtualizedContainerService.HintSize="434,450" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[Not in_usedPlayers.Contains(out_Name.ToString)]" DisplayName="If Player Hasn't Been Used - Choose Name" sap:VirtualizedContainerService.HintSize="434,450" sap2010:WorkflowViewState.IdRef="If_2">
                     <If.Then>
                       <Sequence sap:VirtualizedContainerService.HintSize="376,298" sap2010:WorkflowViewState.IdRef="Sequence_2">
                         <sap:WorkflowViewStateService.ViewState>
