@@ -70,6 +70,76 @@
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "Tests\\TestCase_CreateSquad.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "c3f8a6b9-e096-490c-9bb0-65b277a2fd4a",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\TestCase_KillAllProcesses.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "b4211a2c-03ef-4cb3-a84d-ff511a60457d",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\TestCase_GetUserInput.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "82288aff-ebd7-47be-a159-ad82a224ce36",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\TestCase_CreateDataTable.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "ba6c500b-1c4e-4508-b08d-f1bb9c74aa46",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\TestCase_Futbin_SelectPlayer.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "053ba0cc-9356-4cce-a015-fb90cf044f18",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\TestCase_Futbin_SaveSquad.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "0d29609e-9f12-4077-803e-a8fff3a879dc",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\TestCase_Futbin_GetTop5Leagues.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "30f1959b-5f96-4cc4-b226-2bd4d9d08533",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\TestCase_Futbin_GetFormations.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "505e1928-508f-4ee8-9276-d595642f668f",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\TestCase_Futbin_FilterPlayers.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "8d4d7735-c81d-4a64-bb0d-cee1030c1158",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\TestCase-Futbin_ChooseFormation.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "534bf5f2-545a-4d49-87c7-076bba5f5acf",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\TestCase_Futbin_AddPlayers.xaml"
       }
     ],
     "modernBehavior": true
