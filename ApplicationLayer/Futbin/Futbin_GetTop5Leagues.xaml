@@ -1,0 +1,223 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Futbin_GetTop5Leagues" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_DialogTop5Leagues" Type="OutArgument(x:String)" />
+    <x:Property Name="in_url" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>658,2147.3333333333335</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Futbin_GetTop5Leagues_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Futbin_GetTop5Leagues" sap:VirtualizedContainerService.HintSize="668,2082.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dtLeagueName" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message - Get top 5 Leagues" sap:VirtualizedContainerService.HintSize="606,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Getting top 5 Leagues...&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Open Browser - Get top 5 leagues" sap:VirtualizedContainerService.HintSize="606,894" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="aeba8899-e02d-4989-8bbd-a7b1f0a6e09b" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do - Get top 5 leagues" sap:VirtualizedContainerService.HintSize="450,674.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NHover DisplayName="Hover 'Leagues' - Get top 5 leagues" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NHover_1" ScopeIdentifier="aeba8899-e02d-4989-8bbd-a7b1f0a6e09b" Version="V3">
+              <uix:NHover.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.futbin.com/players" CvTextArea="756, 541, 53, 15" CvTextArgument="Leagues" CvType="Text" DesignTimeRectangle="758, 529, 62, 37" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Leagues'" FullSelectorArgument="&lt;webctrl aaname='Leagues ' aria-role='button' class='dropdown-toggle' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Leagues ' aria-role='button' class='dropdown-toggle' tag='A' type='' check:innerText='Leagues' /&gt;" Guid="ee0a768a-86a6-44e2-b938-b0ac62b65873" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEIAAAApCAYAAACBZ/9xAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAANOSURBVGhD7ZbbS9RBFMf9D2R9E3oWepEQoQeRnkVUREQkQwI1MyR1g/W+hhqSZg/2ZKCbGV5C8ZKZiJdUBF11veBl0wf/k5Pf05lpV21/GWwWnocPOHN+MzvzmTNnjImNjSMljlSEoCIEFSGoCEFFCCpCUBGCihBUhKAiBBUhqAhBRQgqQlARghWRlZVNbW0vKTX13oWPbgJWRE1NHQUCASooeHDho5uAo4j4+FvU0OCl6ekvNDs7S11dbygh4baN5+bm0cjICMd8vnc8fnBwiDIyshzjHR2vqKen184F0AdMu7z8KU1OfrLjTcZiXS0trTQzM8Nrq62tt2P+BEcRvb0+2toKUHNzC1VUVNHKygovKikpmQoLH9LOzg7Nzc1RZ+dr6u//QPPzC7SxscnzOMWHhobPYvNhv4c+gL9xVXd3d1l+UVEJb3ptbY3S0zOosdFLfv8Gud3P+KC2t7d5jaFzheLx1NDp6WkY6DPxiCJwmn6/n6qq3LYvP/8+L8DjqT47IR8tLy+zFBNvb++gvb09nscpHklESkoqj8X3JoZsWF1dtVmztPRzbhwSMN9eRqiMUAkgoghs9uDggBYWFjkLAE736OiIF4K2OT0DsgDyMI9TPJIICEc2QIb5bbC/v08DA4MsZXx8gteHOZqanodd2V8BAeclgIgiSksf0+bmFi/e9OHHkCk4ibGxcb6fJgZC53GKXyYCY9CfmZnN16CursHGUBdycnI5W0L7ysqecKacrzdXIaKIxMQ7nA3Dwx+tbdxX1Iy8vHy+pzgRr7eJY2lp6TQ19ZnrAuZxipsaUFz8iOOoAxAPEWiPjo5yFpgCWV/fyN9XVrqptfWFrReI9fW9vyD9KoSJCAa/0eHhIS8edQCbxf8Xi4tf+ToAbKK6+kdq4TS6u9/S8fExj0UMRXF9fZ036hRHVk1MTNLJyYlNcbSNCAhAOxgM8rqAeVEwFq+PWS/mRuE0+7kqVkQ0QAojlSHE9OG6mVfD9GFTycl3bfs6iKqIkpJSvm5IabQhBKeIJ9ik+79CVEUApLJJbVwt3HGnZ+46iLoIgNTHc4ia8ztP3HXwV0T8D6gIQUUIKkJQEYKKEFSEoCIEFSGoCEFFCDEul4sUF30HJ5tsTbGCDq8AAAAASUVORK5CYII=" InformativeScreenshot="12d51a9abb18d310c0aa23b6e9cfd575.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FIFA 23 Players - Ultimate Team Ratings | FUTBIN' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="386, 538, 66, 15" CvTextArgument="Search..." CvType="Text" DesignTimeRectangle="383, 533, 150, 28" ElementType="InputBox" FriendlyName="'INPUT players_search'" FullSelectorArgument="&lt;webctrl id='players_search' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='players_search' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJoAAAAgCAYAAADqrmEEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAPhSURBVHhe7ZlvT9pQFIf3DQyNjTBBZWqadBMxEP/EJgQWCYZIatRhIGU6gjoH0djMFyZ89t/ObQHbUms12ZUX58WT0NvDPST34dxz209zcwoY5n/DojFSYNEYKbBojBRYNEYKLBojBRaNkQKLxkiBRWOkEEM0FeqXHPKFXSKHrKqGxMwY30x0by+xnQm5x3wI0aLN6yhdPKFvP9HC2egO6PPfJ7SqOtSw+Flhs02/sw9jOeQe8yFEipat3jkLVso+jy2Vb2jsEbWv/tiZgkWbOSJF2zgZot+rYsk7nliBRtuonvVuoSlkd0w0e1T1ROW7vUHDyCGZ8HzP+W4amtFGy4mxYVkm8hmaJ7DVLe5f0rUJnXLl6z1YgxuPNDFyTURLYU3k+0OV+OER3YsTN984jpFGpGja0eNURZsmRUJS3EMfNWMLaxmNZDLRGpCkv0jSiQCrMH7RGG291kkVBZK1UG7DuieJvvsr0FK5T9c3aFpD/B700Tw7hJ7y5LJtNOsVp2/cq3ZgPQRyjURrmCRpg+K+5qDtHOH0D8XZPWx/HsUx0oju0dQi6s7iuHJsfElBCcQoxU64jJ9LaNpDnO6lPXGPaGym/HHjHFOiDWEdaL58L86RPYRF8S3DzeWKNsRFTffHqQaO6Td1g+PMfydaNAFtd1mqBsddcRAgIe6pUuw9C6CbNHZuTAkoTquFc7p3UnyOuz70b8MjXLGConVQmPfHvTyHiqVvdCpe94p2F1KJ09imKjn+TYw8XhfNy/wq8qY4IAzR3BeLuuJuh6L/GfVdXq7ElvZjlyQcxb20wIHm3RWtjQ1f3CtzeAnM58XpO1k06bxNNAcdlVtaLKuEJF07C3e2GxLnx4mjPmox5F5yvxdDtOg5lIU0kuNnfCzazBEp2lrNpv6sg7xvC6OmvvcsmiMJxRRUbwwx6ocuqppznTTEY5GQXi6xipKYL4ZoYyGn5gjkYtFmj+iKtlxFixbwql2FlqZqkaBeaKeDq8nWSTEkirOlXTeRF4cFRbxJKOJAjA1IlrGAiRxq4iQ6uERlU0MyRRWI4irtPuqme6B4TbRJLs8ci+sG6teBXDFF0+tiizehz23hQGz39S3MZUo4pc+n+ytT32Xez6tbp5LZRW18EBA82DguB94MqDqM8zv8JinduCd0raPRIwkPqS1UflKVnMzVR61ACxqrRxsRJ1dM0ZzPTp4iGmIuMU5/LnGCtcqrU99l3s8bejSqVDHecyqx3oWqUAInyvegLEw/bmFmk3ccBhjm7bBojBRYNEYKLBojBRaNkQKLxkiBRWOkwKIxUmDRGCmwaIwEFPwDn2q0tsoiCPQAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NHover.Target>
+            </uix:NHover>
+            <uix:NHover DisplayName="Hover 'Top 5' - Get top 5 leagues" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NHover_2" InteractionMode="Simulate" ScopeIdentifier="aeba8899-e02d-4989-8bbd-a7b1f0a6e09b" Version="V3">
+              <uix:NHover.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.futbin.com/players" CvTextArea="766, 618, 36, 15" CvTextArgument="Top 5" CvType="Text" DesignTimeRectangle="8, 79, 0, 0" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Top 5'" FullSelectorArgument="&lt;webctrl aaname=' Top 5 ' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Top 5 ' tag='A' type='' class='' check:innerText='Top 5' /&gt;" Guid="e1cda949-fa6c-45ea-9248-73dd390d7836" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOsAAAAjCAYAAAB1sf0MAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAMKSURBVHhe7d2xSxtRAMdx/wE1sUNCoiZ/QSF/gJB/INjFulUoQbdOTUHCTSFDKRSKtkPJUFQQzOBUJA4FbyneIOggZiicWwSHG4QTHH59752Xu9hrWsWGd9ffgw8k714u0zf3cgQyNj09jXw+j2w2S0QayWQySi6XU432Y02n00SkkVQqpfwS6+TkFBFpI42JCRnsE8hGZ2dnGSuRfrxQpUwmq0ItFosYe8lYiTQTxJrL5VWoKtYaYyXSSBCqJNtkrERaCseaGoz1/ecDxkqkifBVdXz8TqxfPz1nrESaGBrrOrfBRNoYGiu/sxLpI4g1xViJdMZYiWLiEWOdR73Vxs52hJaBSuRrHqb6xcLZafcOCxsr0euJkmBorPf7uaGBAwfRwzFRj3zNw9TNqDdycLAavZ4oCR4x1hIqS8uorixjzfJicqx19by6NI+nck25hp3vNpyra7iXNg63a5hTr62hcy7mxPxxex2driMeO+gdtfG6FH4Pjx+rveu9n+cFKhFriZLBD/VRYg34MTmmEcw/28SZq6YHhnu6KbbIQ67KP9pYCJ07fP7eiQn7UobfRefjsveBQJRII4y1uneh5nBpolGewlzTFBtXOS7QWQlidbttVMUVcq5p3R4X29s30eeXw+1/AFzjsDm4jig5RhjrRldNheaCQM+2wo/980TNeSpGS9242mguiuclrB1dq3XOt9rAOqLkGGGs7ywvKJy0vO1qqYXjGzkhrohvgzB7+6+81yy2Yavj4spqBOeWGrvH6g7w4Za31j/3wLabKFFGGOvkqr/tFcMV3zNViGKIbXH9zndWeaOpf/zKQiN0bqmydXuZFkOu9Qa3wZRko4xVWPhgwr5Sh9Rwz02sLcpjQay2ZaLXD9VGxygNnMNTRmPfhuOvu3Fg7xm8wUQJ9o9ivb/ffz8lIomxEsUEYyWKCW1iDX79tFCOOk70v9MmViIajrESxQRjJYoJxkoUE4yVKCYYK1FMMFaimPjLWP0JIhq9QqHQJ/81bmZmRv3VI2Ml0syfYy3iJ5gRWkAQARXdAAAAAElFTkSuQmCC" InformativeScreenshot="1522b1a2f00e9ba6994772699d300c4d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FIFA 23 Players - Ultimate Team Ratings | FUTBIN' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="386, 538, 66, 15" CvTextArgument="Search..." CvType="Text" DesignTimeRectangle="383, 533, 150, 28" ElementType="InputBox" FriendlyName="'INPUT players_search'" FullSelectorArgument="&lt;webctrl id='players_search' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='players_search' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJoAAAAgCAYAAADqrmEEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAPhSURBVHhe7ZlvT9pQFIf3DQyNjTBBZWqadBMxEP/EJgQWCYZIatRhIGU6gjoH0djMFyZ89t/ObQHbUms12ZUX58WT0NvDPST34dxz209zcwoY5n/DojFSYNEYKbBojBRYNEYKLBojBRaNkQKLxkiBRWOkEEM0FeqXHPKFXSKHrKqGxMwY30x0by+xnQm5x3wI0aLN6yhdPKFvP9HC2egO6PPfJ7SqOtSw+Flhs02/sw9jOeQe8yFEipat3jkLVso+jy2Vb2jsEbWv/tiZgkWbOSJF2zgZot+rYsk7nliBRtuonvVuoSlkd0w0e1T1ROW7vUHDyCGZ8HzP+W4amtFGy4mxYVkm8hmaJ7DVLe5f0rUJnXLl6z1YgxuPNDFyTURLYU3k+0OV+OER3YsTN984jpFGpGja0eNURZsmRUJS3EMfNWMLaxmNZDLRGpCkv0jSiQCrMH7RGG291kkVBZK1UG7DuieJvvsr0FK5T9c3aFpD/B700Tw7hJ7y5LJtNOsVp2/cq3ZgPQRyjURrmCRpg+K+5qDtHOH0D8XZPWx/HsUx0oju0dQi6s7iuHJsfElBCcQoxU64jJ9LaNpDnO6lPXGPaGym/HHjHFOiDWEdaL58L86RPYRF8S3DzeWKNsRFTffHqQaO6Td1g+PMfydaNAFtd1mqBsddcRAgIe6pUuw9C6CbNHZuTAkoTquFc7p3UnyOuz70b8MjXLGConVQmPfHvTyHiqVvdCpe94p2F1KJ09imKjn+TYw8XhfNy/wq8qY4IAzR3BeLuuJuh6L/GfVdXq7ElvZjlyQcxb20wIHm3RWtjQ1f3CtzeAnM58XpO1k06bxNNAcdlVtaLKuEJF07C3e2GxLnx4mjPmox5F5yvxdDtOg5lIU0kuNnfCzazBEp2lrNpv6sg7xvC6OmvvcsmiMJxRRUbwwx6ocuqppznTTEY5GQXi6xipKYL4ZoYyGn5gjkYtFmj+iKtlxFixbwql2FlqZqkaBeaKeDq8nWSTEkirOlXTeRF4cFRbxJKOJAjA1IlrGAiRxq4iQ6uERlU0MyRRWI4irtPuqme6B4TbRJLs8ci+sG6teBXDFF0+tiizehz23hQGz39S3MZUo4pc+n+ytT32Xez6tbp5LZRW18EBA82DguB94MqDqM8zv8JinduCd0raPRIwkPqS1UflKVnMzVR61ACxqrRxsRJ1dM0ZzPTp4iGmIuMU5/LnGCtcqrU99l3s8bejSqVDHecyqx3oWqUAInyvegLEw/bmFmk3ccBhjm7bBojBRYNEYKLBojBRaNkQKLxkiBRWOkwKIxUmDRGCmwaIwEFPwDn2q0tsoiCPQAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NHover.Target>
+            </uix:NHover>
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dtLeagueName]" DisplayName="Extract Table Data - Get top 5 leagues" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='LeagueName' ReferenceName='Column0'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='li' idx='6' /&gt;&lt;webctrl tag='ul' idx='1' /&gt;&lt;webctrl tag='li' idx='2' /&gt;&lt;webctrl tag='ul' idx='1' /&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="388,160" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="aeba8899-e02d-4989-8bbd-a7b1f0a6e09b" Version="V3">
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="323, 526, 1235, 41" DesignTimeScaleFactor="1" ElementType="List" FriendlyName="'UL'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;div&amp;gt;ul' tag='UL' /&gt;" Guid="3c9dd229-d0c3-423b-964d-8968a75bb16f" InformativeScreenshot="829ab675889275f89ac407516f40ff60.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='FIFA 23 Players - Ultimate Team Ratings | FUTBIN' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NExtractData.Target>
+            </uix:NExtractData>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1928, -878, 1936, 1048" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACUlBMVEVUxq1Txa1TxaxTxKxSxKtSw6tRwqpRwqlQwalRw6pRwalQwahTxq1TxqxSxaxRxKtQwqpQwqlQwKhxzru15ty45923592359y35ty25tu35dt5z71OwKdPwKel39T///+W2ctMv6ZPv6dVxq7C6eKV2cpMvqVPv6Zlyrbj9PL4/Pzz+vnz+/ny+/ny+vmQ18hOvqaK1sj6/f2q4ddyzrx1z710z710zr10zrxzzrxzzrtyzrpxzblxzLlxzLhwy7hcxK1OvqWx5Nrz+vp30L9QxatRxKxQw6pPwqlPwahOwKhNv6ZNvqZOvaVZx7DM7efT7utcyLFPwKhNvaVwzrvu+Pep4NZNvKSa28/+/v/8/f6L1shRxaxSw6q6597n9PVqy7hjybRWxa5NvaRMvKRfybPZ8e7A5+JUxa5Vxa255d645d1mybVMu6N+0sL2+/uk3tRcx7Fxzbvn9fTZ8O2G08So4Nbq9/be8+/l9fP9/v6v4dhhxbFWxq7E6uPW7+t5zbxNvqVoy7fm9fPy+fm449xwybeO18r7/f7K6+av49nC6OK249t4zbxQv6dMvaWy5Nvv+PhxzLtMwaiS18q349t5zb1RwKhax7DP7unM6uhYxK6n3tS65Nx4zLtQvqdMvKNzz73w+fik3tNfxbBTwamd3NH6/fyK1sW859/k9fFry7ZgybPc8e+65t1Vw6uB08P3/Pz8/v6S2MlOwaj1+/p5zr1Xxq7G6+Td8e9exbBmyrbY8e3v+vfu+ffw+viq39ZYx69rzbhrzLdqy7ZbxK6OiJt2AAACKklEQVQ4T3WTZ38SQRCHN5FQAiwBS6KCZ04FS4KnsceGDZCchVMRuwa72HuLJYklJvbee++9oSbxe7k7N8vxE/2/u32evRlmOPK/FBR2MBWZLVZ8zAtwm7nYjs8sDmdOKDW5bCVuq92DlBDasVPnLkZKS8vKunbr7vUhZkIPKT89y2XEhPTqjYe56eMPICbOvv3gqP8APRWVlcFgxUC/gpzQQYNBqBoydNjwESNHVVePHjN23HglhJzQCcAnTppMp7hc4ZJIdKo3VlOjqMjJtOkgzJjp0CdgsdrjsqKoGnI6azYIc2h2Qh45wHhCCHOTnM+bv4AWmooWmi2My0pISwjBsQhesHgJXbrMxlfg8bECWm0ihXz5ChBWrlq9Zu26CHJWIJXWBbp+AwgbN23eIm3dVhzHBhJpIWwHLu3YuWu3JAX37I3JyFHYt18XROoOHOQNpoTgPHQYiZ76hkZNZQ0yrgv0yFF+njx2vIkNvP5Ec8tJLCCEU3Dx9Jmz55LB8xcu+kUDQrh0GYQrV93Xrt+46Q/AhG4ZAr19B4S7EfO9+7EAnwA2IIQHwB8+iliiHn1FogCWeAzCk6duXJGqZjkXHM+eg/DiJfsTw4r+Euir15y/efsOVhDSalUVKQsXquAF7z94xYqM+yB8/ATC5y++eHZFRticv377nslkfvxk9/M5Ewp+tba2tbW3/45DA/qKjPDP1BUOu6NRznMnhBGfMf+F/yiQTv8BnQrafMrGp0AAAAAASUVORK5CYII=" InformativeScreenshot="54ad025b7548934a6357d79ce0203bf0.jpg" Selector="&lt;html app='msedge.exe' title='FIFA 23 Players - Ultimate Team Ratings | FUTBIN' /&gt;" Title="FIFA 23 Players - Ultimate Team Ratings | FUTBIN" Url="[in_url]" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <Assign DisplayName="Assign - Get top 5 leagues" sap:VirtualizedContainerService.HintSize="606,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_DialogTop5Leagues]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtLeagueName]" DisplayName="For Each Row in Data Table - Get top 5 leagues" sap:VirtualizedContainerService.HintSize="606,728" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body  -Get top 5 leagues" sap:VirtualizedContainerService.HintSize="572,608" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[out_DialogTop5Leagues.Equals(&quot;&quot;)]" DisplayName="If - Get top 5 leagues" sap:VirtualizedContainerService.HintSize="510,497.3333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="476,172.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Assign for empty string - Get top 5 Leagues" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[out_DialogTop5Leagues]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[CurrentRow("LeagueName").ToString.Trim]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="476,172.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Assign for non empty string - Get top5 Leagues" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[out_DialogTop5Leagues]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[out_DialogTop5Leagues+";"+CurrentRow("LeagueName").ToString.Trim]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+  </Sequence>
+</Activity>
